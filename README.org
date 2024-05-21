@@ -1,0 +1,41 @@
+* Integración continua 3
+El objetivo de esta práctica es configurar un sistema de integración continua de manera parecida a lo realizado en las prácticas /Integración continua 1/ y /Integración continua 2/.
+
+En esta ocasión, realizaremos un despliegue de una *aplicación móvil* realizada con *flutter*. El proceso de compilación creará un archivo APK y un archivo AAB que serán subidos a [[https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository][GitHub Releases]].
+
+No es necesario hacer pruebas ni ejecutar el código en el IDE: puedes crear directamente el fichero de workflow de GitHub Actions.
+
+A continuación se indican las *características diferentes* del proceso de integración continua para desplegar una aplicación flutter.
+
+** Dependencias generales
+Para compilar y testear aplicaciones flutter, necesitaremos instalar dos dependencias:
+- *Java* - Puedes utilizar la acción [[https://github.com/actions/setup-java][Setup-Java]].
+- *Flutter* - Puedes utilizar la acción [[https://github.com/marketplace/actions/flutter-action][Flutter action]].
+
+** Dependencias del proyecto
+El comando para instalar las dependencias de un proyecto flutter es:
+#+begin_src bash
+  flutter pub get
+#+end_src
+
+** Testeo
+El comando para ejecutar los test es:
+#+begin_src bash
+  flutter test
+#+end_src
+
+** Creación del ejecutable
+Crearemos dos ejecutables: formato ~AAB~ y formato ~APK~. Para ello, tendrás que [[https://docs.flutter.dev/deployment/android#build-an-app-bundle][generar el AAB]] y a continuación [[https://docs.flutter.dev/deployment/android#build-an-apk][construir el APK]]. Puedes utilizar dos acciones ~run~ para ejecutar los comandos necesarios.
+
+** Publicación (despliegue) de los ejecutables
+Para realizar el despliegue de los ejecutables en GitHub Actions, puedes utilizar la acción [[https://github.com/marketplace/actions/automate-github-releases][Create GitHub Release Action]].
+
+** Bonus!!
+Investiga el siguiente artículo:
+
+https://angeloavv.medium.com/how-to-distribute-flutter-desktop-app-binaries-using-github-actions-f8d0f9be4d6b
+
+¿Sabrías configurar un trabajo de integración continua que generara también un *ejecutable para Windows*? Para ello, el trabajo de generación de Windows debe ser ejecutado en una *máquina Windows* en *GitHub Actions*.
+
+** Entrega de la práctica
+Cuando hayas terminado, crea un issue en tu repositorio de GitHub y nómbrame mediante ~@pedroprieto~.
