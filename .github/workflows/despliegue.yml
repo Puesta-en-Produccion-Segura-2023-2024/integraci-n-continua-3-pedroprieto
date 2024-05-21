@@ -33,5 +33,22 @@ jobs:
     - name: Test
       run: flutter test
 
-    # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
-    # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
+    - name: Build AAB
+      run: flutter build appbundle
+
+    - name: Build AAB
+      run: flutter build apk --split-per-abi
+
+    - name: Create Release
+        # Uses the create-github-release action
+      uses: nekofar/create-github-release@v1
+      with:
+        # Defines the tag name for the release (e.g., v1.0.0).
+        tag: v.1.0
+
+        # (Optional) Files to include in the release
+        files: |
+          ./build/app/outputs/apk/release/*
+
+        # (Optional) Defines the title of the release
+        title: Lanzamiento guay!
