@@ -41,7 +41,7 @@ jobs:
 
     - name: Create Release
         # Uses the create-github-release action
-      uses: nekofar/create-github-release@v1
+      uses: nekofar/create-github-release@v1.0.12
       with:
         # Defines the tag name for the release (e.g., v1.0.0).
         tag: v.1.0
