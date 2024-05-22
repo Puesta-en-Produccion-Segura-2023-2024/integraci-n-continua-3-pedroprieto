@@ -48,7 +48,7 @@ jobs:
 
         # (Optional) Files to include in the release
         files: |
-          ./build/app/outputs/apk/release/*
+          ./build/app/outputs/flutter-apk/release/*
 
         # (Optional) Defines the title of the release
         title: Lanzamiento guay
