@@ -51,4 +51,4 @@ jobs:
           ./build/app/outputs/apk/release/*
 
         # (Optional) Defines the title of the release
-        title: Lanzamiento guay!
+        title: Lanzamiento guay
