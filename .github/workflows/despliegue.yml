@@ -36,7 +36,7 @@ jobs:
     - name: Build AAB
       run: flutter build appbundle
 
-    - name: Build AAB
+    - name: Build APK
       run: flutter build apk --split-per-abi
 
     - name: Create Release
@@ -48,7 +48,7 @@ jobs:
 
         # (Optional) Files to include in the release
         files: |
-          ${{ github.workspace }}/build/app/outputs/flutter-apk/*
+          ./build/*
 
         # (Optional) Defines the title of the release
         title: Lanzamiento guay
