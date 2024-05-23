@@ -7,15 +7,14 @@ on:
     branches: [ "master" ]
 
 env:
-  GH_TOKEN:  ${{ github.token }}
+  GH_TOKEN: ${{ github.token }}
 
 jobs:
   build:
-    permissions: write-all
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
 
     steps:
     - uses: actions/checkout@v4
