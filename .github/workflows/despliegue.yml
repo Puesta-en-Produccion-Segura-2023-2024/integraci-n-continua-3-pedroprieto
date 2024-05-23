@@ -43,8 +43,8 @@ jobs:
       run: flutter build apk --split-per-abi
 
     - name: Create Release
-      run: gh release create testrelease3
+      run: gh release create testrelease4
     - name: Upload files AAB
-      run: gh release upload testrelease3 ./build/app/outputs/bundle/release/*
+      run: gh release upload testrelease4 ./build/app/outputs/bundle/release/*
     - name: Upload files APK
-      run: gh release upload testrelease3 .build/app/outputs/flutter-apk/*
+      run: gh release upload testrelease4 ./build/app/outputs/flutter-apk/*
