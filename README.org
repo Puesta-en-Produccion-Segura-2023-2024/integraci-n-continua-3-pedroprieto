@@ -28,7 +28,11 @@ El comando para ejecutar los test es:
 Crearemos dos ejecutables: formato ~AAB~ y formato ~APK~. Para ello, tendrás que [[https://docs.flutter.dev/deployment/android#build-an-app-bundle][generar el AAB]] y a continuación [[https://docs.flutter.dev/deployment/android#build-an-apk][construir el APK]]. Puedes utilizar dos acciones ~run~ para ejecutar los comandos necesarios.
 
 ** Publicación (despliegue) de los ejecutables
-Para realizar el despliegue de los ejecutables en GitHub Actions, puedes utilizar la acción [[https://github.com/marketplace/actions/automate-github-releases][Create GitHub Release Action]].
+Para realizar el despliegue de los ejecutables en GitHub Releases, utilizaremos la herramienta de línea de comandos ~gh~, disponible en GitHub Actions. La descripción del comando la puedes encontrar aquí: https://cli.github.com/manual/gh_release
+
+Deberás lanzar dos comandos:
+- Uno para [[https://cli.github.com/manual/gh_release_create][crear]] la ~release~
+- Otros dos para [[https://cli.github.com/manual/gh_release_upload][subir]] los archivos
 
 ** Bonus!!
 Investiga el siguiente artículo:
