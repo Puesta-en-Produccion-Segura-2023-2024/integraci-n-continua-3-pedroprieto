@@ -42,15 +42,6 @@ jobs:
       run: ls -l
 
     - name: Create Release
-        # Uses the create-github-release action
-      uses: nekofar/create-github-release@v1.0.12
-      with:
-        # Defines the tag name for the release (e.g., v1.0.0).
-        tag: v.1.0
-
-        # (Optional) Files to include in the release
-        files: |
-          ./build/*
-
-        # (Optional) Defines the title of the release
-        title: Lanzamiento guay
+      run: gh release create testrelease
+    - name: Upload files
+      run: gh release upload ./build/*
