@@ -2,9 +2,8 @@ name: Despliegue flutter
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    tags:
+      - 'v*.*.*'
 
 env:
   GH_TOKEN: ${{ github.token }}
