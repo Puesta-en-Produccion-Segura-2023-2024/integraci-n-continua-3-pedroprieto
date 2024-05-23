@@ -18,7 +18,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Create Release
-      run: gh release create testrelease
     - name: Upload files
       run: gh release upload testrelease ./package.json
