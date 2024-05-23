@@ -44,7 +44,3 @@ https://angeloavv.medium.com/how-to-distribute-flutter-desktop-app-binaries-usin
 ** Entrega de la práctica
 Cuando hayas terminado, crea un issue en tu repositorio de GitHub y nómbrame mediante ~@pedroprieto~.
 
-
-
-
-
