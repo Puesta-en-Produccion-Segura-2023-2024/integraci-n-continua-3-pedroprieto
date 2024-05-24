@@ -1,4 +1,4 @@
-name: Despliegue flutter
+name: Despliegue flutter Android
 
 on:
   push:
@@ -35,14 +35,15 @@ jobs:
     - name: Test
       run: flutter test
 
+    - name: Create Release
+      run: gh release create ${{ github.ref_name }}
+
     - name: Build AAB
       run: flutter build appbundle
 
     - name: Build APK
       run: flutter build apk --split-per-abi
 
-    - name: Create Release
-      run: gh release create ${{ github.ref_name }}
     - name: Upload files AAB
       run: gh release upload ${{ github.ref_name }} ./build/app/outputs/bundle/release/*
     - name: Upload files APK
